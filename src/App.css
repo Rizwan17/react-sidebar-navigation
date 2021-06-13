@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side-menu{
+    position: fixed;
+    background: #000;
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    transition: width .2s ease-in;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.side-menu.inactive{
+    width: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.side-menu .top-section{
+    position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.side-menu .top-section .logo{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: inline-block;
+}
+.side-menu .top-section .logo img{
+    max-width: 100%;
+    max-height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-menu .top-section .toggle-menu-btn{
+    color: #333;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.side-menu.inactive .top-section .toggle-menu-btn{
+    right: -50px;
+}
+
+.side-menu .search-controller{
+    color: #fff;
+    position: relative;
+}
+
+.side-menu .search-controller .search-btn{
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    color: #666;
+}
+
+.side-menu .search-controller input[type=text]{
+    border: 0;
+    outline: none;
+    height: 35px;
+    background: #333;
+    border-radius: 5px;
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 40px;
+    color: #666;
+}
+
+.side-menu .main-menu .menu-item{
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.side-menu .main-menu{
+    margin: 5px 0;
+}
+
+.side-menu .main-menu .menu-item .menu-icon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.side-menu .main-menu .menu-item span{
+    position: absolute;
+    display: inline-block;
+    line-height: 40px;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .main-menu .menu-item span{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.side-menu .main-menu .sub-menu{
+    color: #333;
+    margin-left: 20px;
+    border-left: 1px solid #666;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+.side-menu .main-menu .sub-menu a{
+    display: block;
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.side-menu-footer{
+    width: 100%;
+    background: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.side-menu-footer .avatar{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+}
+.side-menu-footer .avatar img{
+    max-width: 100%;
+}
+
+.side-menu-footer .user-info{
+    display: inline-block;
+    margin: 0 10px;
+    color: #fff;
+}
+
+
+.side-menu-footer .user-info h5{
+    font-size: 15px;
+}
+
+
+.side-menu-footer .user-info p{
+    font-size: 14px;
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    border-radius: 1px;
+    background: #333;
 }
